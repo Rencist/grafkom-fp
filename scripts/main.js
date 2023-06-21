@@ -9,9 +9,10 @@ const container = document.getElementById('three');
 // Initialize scene and camera
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(
-  100,
+  75,
   window.innerWidth / window.innerHeight,
-  0.5
+  0.1,
+  1000
 );
 camera.position.z = 5;
 
@@ -51,5 +52,3 @@ function animate() {
 }
 
 animate();
-
-export { center };
