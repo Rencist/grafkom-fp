@@ -1,0 +1,16 @@
+{
+  "name": "grafkom-fp",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "npx vite",
+    "format": "prettier --write ."
+  },
+  "dependencies": {
+    "three": "^0.152.2"
+  },
+  "devDependencies": {
+    "prettier": "^2.8.8",
+    "vite": "^4.3.8"
+  }
+}
