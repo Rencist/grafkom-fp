@@ -25,10 +25,6 @@ container.appendChild(renderer.domElement);
 const controller = new OrbitControls(camera, renderer.domElement);
 controller.target.set(1, 1, 1);
 
-// Add world axis
-const axesHelper = new THREE.AxesHelper(8);
-scene.add(axesHelper);
-
 // Add onResize listener
 window.addEventListener(
   'resize',
