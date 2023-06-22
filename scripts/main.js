@@ -13,7 +13,7 @@ const camera = new THREE.PerspectiveCamera(
   0.1,
   1000
 );
-camera.position.set(6, 5, 6);
+camera.position.set(5, 4, 5);
 
 // Initialize renderer
 const renderer = new THREE.WebGLRenderer();
@@ -40,8 +40,8 @@ window.addEventListener(
   false
 );
 
-const cube = new RubiksCube(scene);
-cube.toggle();
+// Add rubiks cube
+const cube = new RubiksCube(scene, window);
 
 // Main loop
 function animate() {
