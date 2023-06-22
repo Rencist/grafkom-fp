@@ -1,6 +1,4 @@
 import * as THREE from 'three';
-import { BLUE, RED, YELLOW } from './constants/colors';
-import { Piece } from './rubiks/piece';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import { RubiksCube } from './rubiks/rubiksCube';
 
@@ -43,11 +41,13 @@ window.addEventListener(
 );
 
 const cube = new RubiksCube(scene);
+cube.toggle();
 
 // Main loop
 function animate() {
   requestAnimationFrame(animate);
-
+  controller.update();
+  cube.update();
   renderer.render(scene, camera);
 }
 
