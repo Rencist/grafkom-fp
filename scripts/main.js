@@ -15,7 +15,7 @@ const camera = new THREE.PerspectiveCamera(
   0.1,
   1000
 );
-camera.position.set(5, 4, 5);
+camera.position.set(6, 5, 6);
 
 // Initialize renderer
 const renderer = new THREE.WebGLRenderer();
@@ -28,7 +28,7 @@ const controller = new OrbitControls(camera, renderer.domElement);
 controller.target.set(1, 1, 1);
 
 // Add world axis
-const axesHelper = new THREE.AxesHelper(5);
+const axesHelper = new THREE.AxesHelper(8);
 scene.add(axesHelper);
 
 // Add onResize listener
