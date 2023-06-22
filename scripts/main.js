@@ -2,6 +2,7 @@ import * as THREE from 'three';
 import { BLUE, RED, YELLOW } from './constants/colors';
 import { Piece } from './rubiks/piece';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
+import { RubiksCube } from './rubiks/rubiksCube';
 
 // Get three container
 const container = document.getElementById('three');
@@ -14,7 +15,7 @@ const camera = new THREE.PerspectiveCamera(
   0.1,
   1000
 );
-camera.position.z = 5;
+camera.position.set(5, 4, 5);
 
 // Initialize renderer
 const renderer = new THREE.WebGLRenderer();
@@ -41,8 +42,7 @@ window.addEventListener(
   false
 );
 
-const side = new Piece([RED, BLUE, YELLOW]);
-scene.add(side);
+const cube = new RubiksCube(scene);
 
 // Main loop
 function animate() {

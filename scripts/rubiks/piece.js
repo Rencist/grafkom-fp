@@ -16,10 +16,18 @@ export class Piece extends THREE.Group {
       color: color,
       side: THREE.DoubleSide,
     });
-    const side = new THREE.Mesh(sideGeometry, sideMaterial);
 
+    const side = new THREE.Mesh(sideGeometry, sideMaterial);
     side.rotation.set(...rotation);
     side.position.set(...position);
+
+    const wireframeGeometry = new THREE.EdgesGeometry(side.geometry);
+    const wireframeMaterial = new THREE.LineBasicMaterial({ color: BLACK });
+    const wireframe = new THREE.LineSegments(
+      wireframeGeometry,
+      wireframeMaterial
+    );
+    side.add(wireframe);
 
     this.add(side);
   }
@@ -32,12 +40,12 @@ export class Piece extends THREE.Group {
     super();
     this.sides = {
       xPositive: this.addSide(
-        colors.includes(RED) ? RED : BLACK,
+        colors.includes(ORANGE) ? ORANGE : BLACK,
         [0.5, 0, 0],
         [0, 0.5 * Math.PI, 0]
       ),
       xNegative: this.addSide(
-        colors.includes(ORANGE) ? ORANGE : BLACK,
+        colors.includes(RED) ? RED : BLACK,
         [-0.5, 0, 0],
         [0, 0.5 * Math.PI, 0]
       ),
@@ -52,12 +60,12 @@ export class Piece extends THREE.Group {
         [0.5 * Math.PI, 0, 0]
       ),
       zPositive: this.addSide(
-        colors.includes(BLUE) ? BLUE : BLACK,
+        colors.includes(GREEN) ? GREEN : BLACK,
         [0, 0, 0.5],
         [0, 0, 0]
       ),
       zNegative: this.addSide(
-        colors.includes(GREEN) ? GREEN : BLACK,
+        colors.includes(BLUE) ? BLUE : BLACK,
         [0, 0, -0.5],
         [0, 0, 0]
       ),
